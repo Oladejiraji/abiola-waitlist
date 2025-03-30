@@ -1,9 +1,17 @@
 import React from "react";
 
-const ShimmerButton = () => {
+interface IProps {
+  title: string;
+  onClick: () => void;
+}
+
+const ShimmerButton = ({ title, onClick }: IProps) => {
   return (
-    <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-      Shimmer
+    <button
+      onClick={onClick}
+      className="shadow-[inset_0_0_0_2px_#616467] cursor-pointer font-sans text-black px-12 py-4 rounded-lg tracking-widest uppercase font-bold bg-transparent hover:bg-[#616467] hover:text-white dark:text-neutral-200 transition duration-200"
+    >
+      {title}
     </button>
   );
 };
